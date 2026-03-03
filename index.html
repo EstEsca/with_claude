@@ -1,0 +1,79 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no" />
+  <meta name="apple-mobile-web-app-capable" content="yes" />
+  <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent" />
+  <meta name="apple-mobile-web-app-title" content="테트리스" />
+  <link rel="apple-touch-icon" href="icon.png" />
+  <title>테트리스</title>
+  <link rel="stylesheet" href="style.css" />
+</head>
+<body>
+  <div id="app">
+    <header>
+      <h1>테트리스</h1>
+    </header>
+
+    <main>
+      <div id="side-left">
+        <div class="info-box">
+          <p class="label">점수</p>
+          <p id="score">0</p>
+        </div>
+        <div class="info-box">
+          <p class="label">레벨</p>
+          <p id="level">1</p>
+        </div>
+        <div class="info-box">
+          <p class="label">라인</p>
+          <p id="lines">0</p>
+        </div>
+      </div>
+
+      <div id="game-area">
+        <canvas id="board"></canvas>
+        <div id="overlay" class="hidden">
+          <div id="overlay-content">
+            <h2 id="overlay-title">테트리스</h2>
+            <p id="overlay-msg">게임을 시작하세요</p>
+            <button id="overlay-btn">시작</button>
+          </div>
+        </div>
+      </div>
+
+      <div id="side-right">
+        <div class="info-box">
+          <p class="label">다음</p>
+          <canvas id="next-canvas"></canvas>
+        </div>
+        <div class="info-box">
+          <p class="label">홀드</p>
+          <canvas id="hold-canvas"></canvas>
+        </div>
+      </div>
+    </main>
+
+    <div id="controls">
+      <div class="ctrl-row">
+        <button class="ctrl-btn" id="btn-hold" aria-label="홀드">⬆</button>
+      </div>
+      <div class="ctrl-row">
+        <button class="ctrl-btn" id="btn-left" aria-label="왼쪽">◀</button>
+        <button class="ctrl-btn" id="btn-down" aria-label="아래">▼</button>
+        <button class="ctrl-btn" id="btn-right" aria-label="오른쪽">▶</button>
+      </div>
+      <div class="ctrl-row">
+        <button class="ctrl-btn wide" id="btn-rotate" aria-label="회전">↻ 회전</button>
+        <button class="ctrl-btn wide" id="btn-drop" aria-label="즉시 낙하">⬇ 낙하</button>
+      </div>
+      <div class="ctrl-row">
+        <button class="ctrl-btn full" id="btn-pause" aria-label="일시정지">⏸ 일시정지</button>
+      </div>
+    </div>
+  </div>
+
+  <script src="tetris.js"></script>
+</body>
+</html>
